@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/win_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Flowy Browser"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/win_text"
+            android:gravity="start"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Search bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/win_input_bg"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search"
+                android:layout_marginEnd="12dp" />
+
+            <EditText
+                android:id="@+id/searchInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Search or type URL"
+                android:inputType="textUri"
+                android:background="@null"
+                android:textColor="@color/win_text"
+                android:textColorHint="@color/win_text_secondary"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/searchGoButton"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_send_black_24dp"
+                android:layout_marginStart="12dp"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Most visited / Bookmarks section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quick Access"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/win_text"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Quick access sites grid -->
+        <LinearLayout
+            android:id="@+id/quickAccessContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="32dp" />
+
+        <!-- Bottom navigation buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <Button
+                android:id="@+id/bookmarksButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bookmarks"
+                android:drawableStart="@drawable/ic_bookmark"
+                android:background="@drawable/win_list_item_bg"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:textColor="@color/win_text"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/historyButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="History"
+                android:drawableStart="@drawable/ic_refresh_black_24dp"
+                android:background="@drawable/win_list_item_bg"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:textColor="@color/win_text"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/downloadsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Downloads"
+                android:drawableStart="@drawable/ic_send_black_24dp"
+                android:background="@drawable/win_list_item_bg"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:textColor="@color/win_text"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp" />
+
+            <Button
+                android:id="@+id/settingsButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:drawableStart="@drawable/ic_menu"
+                android:background="@drawable/win_list_item_bg"
+                android:gravity="start|center_vertical"
+                android:padding="16dp"
+                android:textColor="@color/win_text"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,21 +1,33 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# Minimal ProGuard rules for secure browser
+# Optimized for small APK size and maximum security
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Keep WebView functionality (no JavaScript interfaces needed)
+-keep public class * extends android.webkit.WebViewClient { *; }
+-keep public class * extends android.webkit.WebChromeClient { *; }
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Keep main activity and its methods
+-keep public class com.ccs.flowybrowser.MainActivity {
+    public *;
+}
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Keep secure WebView client
+-keep public class com.ccs.flowybrowser.SecureWebViewClient {
+    public *;
+}
+
+# General optimization rules
+-optimizationpasses 5
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-dontpreverify
+-verbose
+
+# Keep line numbers for debugging (remove in production)
+-keepattributes SourceFile,LineNumberTable
+
+# SnakeYAML's optional JavaBeans integration is not available on Android.
+-dontwarn java.beans.BeanInfo
+-dontwarn java.beans.FeatureDescriptor
+-dontwarn java.beans.IntrospectionException
+-dontwarn java.beans.Introspector
+-dontwarn java.beans.PropertyDescriptor

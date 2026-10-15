@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Flowy Browser</string>
+
+    <string-array name="search_engines">
+        <item>Google</item>
+        <item>Bing</item>
+        <item>DuckDuckGo</item>
+    </string-array>
+
+    <string-array name="search_engines_values">
+        <item>google</item>
+        <item>bing</item>
+        <item>duckduckgo</item>
+    </string-array>
 </resources>
